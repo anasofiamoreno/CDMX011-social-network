@@ -1,0 +1,99 @@
+:root{
+    --gris-menu: hsl(218, 20%, 74%);
+   }
+
+#menusuperiorfijo{
+  display: flex;
+  background-color: var(--gris-menu);
+  height: 2em;
+  align-items: center;
+  border-radius: 3px;
+} 
+
+#menusuperior{
+    display: block;
+    flex-direction: column-reverse;
+    
+  } 
+   
+#barlogin{  
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  padding-right: .5em;;
+}
+
+.btn{
+    margin: 3px;
+}
+
+.btnicon{
+    margin: 7px;
+}
+
+#barnav{  
+    display: flex;
+    flex-direction: row;
+    padding-left: .5em;;
+  }
+
+#btnhome{
+  display: block;
+  height: 22px;
+  width: 22px;   
+}
+
+#btnperfil{
+    display: block;
+    height: 22px;
+    width: 22px;   
+  }
+
+#menusingup{
+    background-color: thistle;
+    padding: 0em 1em 1em 1em;
+    position: relative;
+    float: right;
+    display: none;
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px gray;
+    margin-top: 1px;
+}
+
+#menulogin{
+    background-color: thistle;
+    padding: 0em 1em 1em 1em;
+    position: relative;
+    float: right;
+    display: none;
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px gray;
+    margin-top: 1px;
+}
+
+#nomachs{
+    Color: red;
+    display: none;
+}
+
+#dones{
+    Color:  green;
+    display: none;
+}
+
+#fails{
+    Color: red;
+    display: none;
+}
+
+#done{
+    Color:  green;
+    display: none;
+}
+
+#fail{
+    Color: red;
+    display: none;
+}
