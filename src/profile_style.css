@@ -1,0 +1,29 @@
+#picture_profile{
+   border-radius: 50%;
+   border-style: solid;
+   border-color: rgb(56, 54, 54) ;
+   border-width: 5px;
+   width: 150px;
+   margin: auto;
+   display: block;
+   position: relative;
+   top: 35px;
+   z-index: 1;
+  }
+
+#content_profile{
+   border-style: double;
+   position: relative;
+}
+
+#menu_profile{
+   width: 100% !important;
+   height: 30px;
+   background-color: coral;
+}
+
+#info_profile{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
