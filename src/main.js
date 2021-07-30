@@ -1,3 +1,4 @@
+
 const objButtonHome = document.getElementById("btnhome");
 
 document.getElementById("btn-menu-login").addEventListener("click",showmenulogin);
@@ -7,6 +8,7 @@ document.getElementById("close-menusingup").addEventListener("click",hidemenusin
 document.getElementById("close-menulogin").addEventListener("click",hidemenulogin);
 document.getElementById("loginform").addEventListener("submit",sendlogin);
 document.getElementById("singupform").addEventListener("submit",sendsingup);
+
 
 
 function showmenulogin(){
@@ -102,3 +104,23 @@ function logout(){
     // An error happened.
   });
 }
+
+firebase.auth().onAuthStateChanged( function(user) {
+  
+  if(user){
+    document.getElementById("btn-menu-login").style.display = "none";
+    document.getElementById("btn-menu-logout").style.display = "block";
+    document.getElementById("general_profile").innerHTML='<iframe src="profile.html"  scrolling="yes" width="100%" height="100%" frameborder="0" ></iframe>';
+
+  }
+  else{
+    document.getElementById("btn-menu-login").style.display = "block";
+    document.getElementById("done").style.display = "none";
+    document.getElementById("general_profile").innerHTML='<p>Inicia Secion Por Favor</p>';
+  }
+
+
+
+
+});
+

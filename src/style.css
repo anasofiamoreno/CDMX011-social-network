@@ -1,6 +1,10 @@
 :root{
     --gris-menu: hsl(218, 20%, 74%);
    }
+   body{
+    height: 100%;
+    width: 100%;
+   }
 
 #menusuperiorfijo{
   display: flex;
@@ -97,3 +101,11 @@
     Color: red;
     display: none;
 }
+
+#general_profile{
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
