@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css" />
+  <title>Document</title>
+</head>
+<body>
+  
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-analytics.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyACN1diAPgfrorgBwpJYM27IODznCXw0ws",
+    authDomain: "redsocial-9ea9b.firebaseapp.com",
+    projectId: "redsocial-9ea9b",
+    storageBucket: "redsocial-9ea9b.appspot.com",
+    messagingSenderId: "624279654059",
+    appId: "1:624279654059:web:cd39ed7de5d95d94c4f1ee",
+    measurementId: "G-KXRMZWDSHM"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+<script type="module" src="main.js"></script>
+
+
+
+
+
+
+ 
+
+<!--Menu Superior-->
+
+  <section id="menusuperior">
+
+    <div id=menusuperiorfijo>
+      <div id="barnav">
+        <div>
+          <img id="btnhome" class="btnicon" type="button" src="img/iconhome.png">
+        </div>
+        <div>
+          <img id="btnperfil" class="btnicon" type="button" src="img/iconperfil.png">
+        </div>
+      </div>
+      <div id="barlogin">
+        <div>
+          <input type="button" class="btn" id="btn-menu-login" value="Log In" style="display: none;">
+        </div>
+      <div>
+        <input type="button" class="btn" id="btn-menu-logout" value="Log Out" style="display: none;">
+      </div>  
+    </div>
+
+  </section>
+
+<!--Menu Sing up-->
+
+  <div id="menusingup">
+    <form id="singupform">
+      <p>Registrar Usuarios</p>
+      <div>Usuario</div>
+      <div>
+        <input type="text" id="mailsingup" placeholder="Correo" required>
+      </div>
+      <br>
+      <div>Constraseña</div>
+      <div>Minimo 6 caracteres</div>
+      <div>
+        <input type="password" id="passwordsingup" placeholder="Password" required>
+      </div>
+      <div>Confirmar Contraseña</div>
+      <div>
+        <input type="password" id="passwordsingupc" placeholder="Password" required>
+      </div>
+      <div id="nomachs">Contraseñas no coinsiden</div>
+      <div id="dones">Registro Exitoso</div>
+      <div id="fails">Falla en el Registro</div>
+      <br>
+      <button type="submut" id="btnsingup">Registrar</button>
+      <input type="button" class="btn" id="close-menusingup" value="Cerrar">
+    </form>
+  </div>
+
+<!--Menu Log In-->
+  <div id="menulogin">
+    
+    <form id="loginform">    
+      <p>Ingresa tu nombre de usuario y contraseña</p>
+      <div>
+        <input type="text" id="maillogin" placeholder="Correo" required>
+       </div>
+       <div>
+        <input type="password" id="passwordlogin" placeholder="Password" required>
+      </div>
+      <div id="done">Ingreso Exitoso</div>
+      <div id="fail">Falla en el Registro</div>
+      <br>
+      <button type="submut" class="btn" id="btnlogin">Ingresar</button>
+      <input type="button" class="btn" id="btn-menu-singup" value="Registrarse ">
+      <input type="button" class="btn" id="close-menulogin" value="Cerrar">
+    </form> 
+  </div>
+
+  <!--Profile base-->
+
+  <section> 
+    <div id="general_profile"></div>
+  </section> 
+ 
+    
+
+
+
+</body>
+</html>
