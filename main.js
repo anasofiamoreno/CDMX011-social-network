@@ -160,6 +160,7 @@ function pages(){
       document.getElementById("general_profile").innerHTML = listpages.profile();
       break;
     default: 
+      window.history.pushState({},"hola","/");
       document.getElementById("general_profile").innerHTML = listpages.home();
       break
   }
