@@ -10,33 +10,7 @@
 <body>
   
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-analytics.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyACN1diAPgfrorgBwpJYM27IODznCXw0ws",
-    authDomain: "redsocial-9ea9b.firebaseapp.com",
-    projectId: "redsocial-9ea9b",
-    storageBucket: "redsocial-9ea9b.appspot.com",
-    messagingSenderId: "624279654059",
-    appId: "1:624279654059:web:cd39ed7de5d95d94c4f1ee",
-    measurementId: "G-KXRMZWDSHM"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
-
-<script type="module" src="main.js"></script>
 
 
 
@@ -51,6 +25,9 @@
 
     <div id=menusuperiorfijo>
       <div id="barnav">
+        <div>
+          <img id="btnback" class="btnicon" type="button" src="img/iconback.png" style="display: none;">
+        </div>
         <div>
           <img id="btnhome" class="btnicon" type="button" src="img/iconhome.png">
         </div>
@@ -119,12 +96,40 @@
 
   <!--Profile base-->
 
+  
+
   <section> 
     <div id="general_profile"></div>
   </section> 
  
     
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-analytics.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyACN1diAPgfrorgBwpJYM27IODznCXw0ws",
+    authDomain: "redsocial-9ea9b.firebaseapp.com",
+    projectId: "redsocial-9ea9b",
+    storageBucket: "redsocial-9ea9b.appspot.com",
+    messagingSenderId: "624279654059",
+    appId: "1:624279654059:web:cd39ed7de5d95d94c4f1ee",
+    measurementId: "G-KXRMZWDSHM"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+<script type="module" src="main.js"></script>
 
 
 </body>

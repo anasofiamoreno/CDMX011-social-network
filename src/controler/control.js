@@ -1,0 +1,1 @@
+import viewhome from '/pages/home.html'

@@ -1,12 +1,13 @@
+import {listpages} from './pages/pages.js'  //import de paginas
+
+
+//Objertos y Variables////////
+console.log("hola");
 var userstate = firebase.auth().currentUser;
-autenticar();
+//window.history.pushState({},"hola","/");
+//const objButtonHome = document.getElementById("btnhome");
 
-
-window.onpopstate = () => {
-  autenticar(); 
-}
-
-const objButtonHome = document.getElementById("btnhome");
+//Listeners & Eventos //////////////////////////////////////////////////////////
 
 document.getElementById("btn-menu-login").addEventListener("click",showmenulogin);
 document.getElementById("btn-menu-singup").addEventListener("click",showmenusingup);
@@ -15,14 +16,43 @@ document.getElementById("close-menusingup").addEventListener("click",hidemenusin
 document.getElementById("close-menulogin").addEventListener("click",hidemenulogin);
 document.getElementById("loginform").addEventListener("submit",sendlogin);
 document.getElementById("singupform").addEventListener("submit",sendsingup);
-document.getElementById("btnhome").addEventListener("click",sendhome);
-document.getElementById("btnprofile").addEventListener("click",sendprofile);
+document.getElementById("btnhome").addEventListener("click",showhome);
+document.getElementById("btnprofile").addEventListener("click",showprofile);
+document.getElementById("btnback").addEventListener("click",sendback);
+
+window.onpopstate = () => { //Evento cambio de pagina en navegado y autenticacion
+  autenticar(); 
+}
+
+firebase.auth().onAuthStateChanged( function(user) {  //Autenticacion de Usuario al Entrar a la App o al cambiar de estado
+  
+  
+  if(user){
+    document.getElementById("btn-menu-login").style.display = "none";
+    document.getElementById("btn-menu-logout").style.display = "block";
+    pages();
+    console.log("authchange_si_logeado");
+    
+  
+  }
+  else{
+    document.getElementById("btn-menu-login").style.display = "block";
+    document.getElementById("done").style.display = "none";
+    document.getElementById("general_profile").innerHTML='<p>Inicia Secion Por Favor</p>';
+    window.history.pushState({},"","/");
+    console.log("authchange_no_logeado");
+  }
+  
 
 
 
+});
+
+
+//Menus de Logeo////////////////////////////
 
 function showmenulogin(){
-  window.history.pushState({},"hola",window.location + "/login");
+  window.history.pushState({},"hola","/login");
   document.getElementById("menusingup").style.display = "none";
   document.getElementById("menulogin").style.display = "block";
 }
@@ -32,6 +62,7 @@ function showmenusingup(){
   document.getElementById("menusingup").style.display = "block";
   
 }
+
 function sendsingup(e){
 
   document.getElementById("nomachs").style.display = "none";
@@ -46,27 +77,23 @@ function sendsingup(e){
 
   if(password.value==passwordc.value){
 
-  
-
-  firebase.auth().createUserWithEmailAndPassword(user.value,password.value)
-  .then((userCredential) => {
-    document.getElementById("dones").style.display = "block";
-    document.getElementById("btn-menu-login").style.display = "none";
-    document.getElementById("btn-menu-logout").style.display = "block";
-    var user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    //var errorCode = error.code;
-    var errorMessage = error.message;
-    document.getElementById("fails").style.display = "block";
-    document.getElementById("fails").innerHTML = errorMessage;
-  });
-}
-
-else{
-  document.getElementById("nomachs").style.display = "block";
-}
+    firebase.auth().createUserWithEmailAndPassword(user.value,password.value)
+    .then((userCredential) => {
+      document.getElementById("dones").style.display = "block";
+      document.getElementById("btn-menu-login").style.display = "none";
+      document.getElementById("btn-menu-logout").style.display = "block";
+      var user = userCredential.user;
+    })
+    .catch((error) => {
+      //var errorCode = error.code;
+      var errorMessage = error.message;
+      document.getElementById("fails").style.display = "block";
+      document.getElementById("fails").innerHTML = errorMessage;
+    });
+  }
+  else{
+    document.getElementById("nomachs").style.display = "block";
+  }
 }
 
 function sendlogin(e){
@@ -118,86 +145,64 @@ function logout(){
   });
 }
 
-firebase.auth().onAuthStateChanged( function(user) {
-  
-  
-  if(user){
-    document.getElementById("btn-menu-login").style.display = "none";
-    document.getElementById("btn-menu-logout").style.display = "block";
-    pages();
-    
-  
-  }
-  else{
-    document.getElementById("btn-menu-login").style.display = "block";
-    document.getElementById("done").style.display = "none";
-    document.getElementById("general_profile").innerHTML='<p>Inicia Secion Por Favor</p>';
-    window.history.pushState({},"","/");
-  }
-  
-
-
-
-});
-
+//Router de paginas/////////////////////////////////////
 
 function pages(){
-  
+
   switch(window.location.pathname){
     case "/home":
-      document.getElementById("general_profile").innerHTML = '<iframe src="pages/home.html"  scrolling="yes" width="100%" height="100%" frameborder="0" ></iframe>';
+      document.getElementById("general_profile").innerHTML = listpages.home();
       break;
     case "/":
-      document.getElementById("general_profile").innerHTML = '<iframe src="pages/home.html"  scrolling="yes" width="100%" height="100%" frameborder="0" ></iframe>';
+      document.getElementById("general_profile").innerHTML = '<div>Hola Mundo</div>';
       break;
     case "/profile":
-      document.getElementById("general_profile").innerHTML = '<iframe src="pages/profile.html"  scrolling="yes" width="100%" height="100%" frameborder="0" ></iframe>';
+      document.getElementById("general_profile").innerHTML = listpages.profile();
       break;
     default: 
-      document.getElementById("general_profile").innerHTML = '<iframe src="pages/error.html"  scrolling="yes" width="100%" height="100%" frameborder="0" ></iframe>';
+      document.getElementById("general_profile").innerHTML = listpages.home();
       break
   }
-
-
-  
-
-
-
-
-
 
 }
 
 
-function sendprofile(){
+function showprofile(){
   window.history.pushState({},"hola","/profile");
   autenticar();
 }
 
-function sendhome(){
+function showhome(){
   window.history.pushState({},"hola","/home");
+  autenticar();
+}
+
+function sendback(){
+  window.history.go(-1);
   autenticar();
 }
 
 function autenticar(){
 
- 
   userstate = firebase.auth().currentUser;
   
   
     if(userstate){
       pages();
-      
+      console.log("autenticador_si_logeado");
     }
     else{
       document.getElementById("general_profile").innerHTML='<p>Inicia Secion Por Favor</p>';
       window.history.pushState({},"","/");
+      console.log("autenticador_no_logeado");
     }
     
   
+  console.log(window.history.length );
   
-  
-  
+    if(window.history.length > 0){
+      document.getElementById("btnback").style.display = "block";
+    }
   
 
 }
