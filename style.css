@@ -28,11 +28,14 @@
 }
 
 .btn{
-    margin: 3px;
+    margin: 3px; 
 }
 
 .btnicon{
+    display: block;
     margin: 7px;
+    height: 22px;
+    width: 22px; 
 }
 
 #barnav{  
@@ -41,17 +44,6 @@
     padding-left: .5em;;
   }
 
-#btnhome{
-  display: block;
-  height: 22px;
-  width: 22px;   
-}
-
-#btnprofile{
-    display: block;
-    height: 22px;
-    width: 22px;   
-  }
 
 #menusingup{
     background-color: thistle;
@@ -136,13 +128,24 @@
 }
 
 #menu_profile{
+  display: flex;
   width: 100% !important;
-  height: 30px;
-  background-color: coral;
+  
+  background-color:yellowgreen;
 }
 
 #info_profile{
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+#find_post{
+  display: block;
+  align-content: flex-end;
+}
+
+#btn_menu_profile_findpost{
+  display: block;
+  align-content: center;
 }
