@@ -1,9 +1,10 @@
-import {listpages} from '/pages/pages.js'  //import de paginas
+import {listpages} from './pages/pages.js'  //import de paginas
 
 
 //Objertos y Variables////////
-
+console.log("hola");
 var userstate = firebase.auth().currentUser;
+//window.history.pushState({},"hola","/");
 //const objButtonHome = document.getElementById("btnhome");
 
 //Listeners & Eventos //////////////////////////////////////////////////////////
@@ -159,7 +160,7 @@ function pages(){
       document.getElementById("general_profile").innerHTML = listpages.profile();
       break;
     default: 
-      document.getElementById("general_profile").innerHTML = listpages.errorp();
+      document.getElementById("general_profile").innerHTML = listpages.home();
       break
   }
 

@@ -1,0 +1,151 @@
+:root{
+    --gris-menu: hsl(218, 20%, 74%);
+   }
+   body{
+    height: 100%;
+    width: 100%;
+   }
+
+#menusuperiorfijo{
+  display: flex;
+  background-color: var(--gris-menu);
+  height: 2em;
+  align-items: center;
+  border-radius: 3px;
+} 
+
+#menusuperior{
+    display: block;
+    flex-direction: column-reverse;
+    
+  } 
+   
+#barlogin{  
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  padding-right: .5em;;
+}
+
+.btn{
+    margin: 3px; 
+}
+
+.btnicon{
+    display: block;
+    margin: 7px;
+    height: 22px;
+    width: 22px; 
+}
+
+#barnav{  
+    display: flex;
+    flex-direction: row;
+    padding-left: .5em;;
+  }
+
+
+#menusingup{
+    background-color: thistle;
+    padding: 0em 1em 1em 1em;
+    position: relative;
+    float: right;
+    display: none;
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px gray;
+    margin-top: 1px;
+}
+
+#menulogin{
+    background-color: thistle;
+    padding: 0em 1em 1em 1em;
+    position: relative;
+    float: right;
+    display: none;
+    border-width: 1px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px gray;
+    margin-top: 1px;
+}
+
+#nomachs{
+    Color: red;
+    display: none;
+}
+
+#dones{
+    Color:  green;
+    display: none;
+}
+
+#fails{
+    Color: red;
+    display: none;
+}
+
+#done{
+    Color:  green;
+    display: none;
+}
+
+#fail{
+    Color: red;
+    display: none;
+}
+
+#general_profile{
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+#picture_profile{
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgb(56, 54, 54) ;
+  border-width: 5px;
+  width: 150px;
+  margin: auto;
+  display: block;
+  position: relative;
+  top: 35px;
+  z-index: 1;
+ }
+
+#content_profile{
+  border-style: double;
+  position: relative;
+}
+
+#menu_profile{
+  display: flex;
+  width: 100% !important;
+  
+  background-color:yellowgreen;
+}
+
+#info_profile{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#find_post{
+  display: block;
+  align-content: flex-end;
+}
+
+#btn_menu_profile_findpost{
+  display: block;
+  align-content: center;
+}
